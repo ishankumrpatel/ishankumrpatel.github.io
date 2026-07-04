@@ -62,7 +62,7 @@
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
     /* ── STATS ── */
-    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 700px; width: 100%; margin: 0 auto; border: 1px solid var(--card-bdr); border-radius: 16px; background: var(--card-bg); backdrop-filter: blur(10px); overflow: hidden; }
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 700px; width: 100%; margin: 0 auto; border: 1px solid var(--card-bdr); border-radius: 16px; background: var(--card-bg); backdrop-filter: blur(10px); overflow: hidden; }
     .stat { padding: 24px 16px; text-align: center; border-right: 1px solid var(--card-bdr); }
     .stat:last-child { border-right: none; }
     .stat-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 6px; }
@@ -142,9 +142,7 @@
       .btn-primary, .btn-secondary { font-size: 0.85rem; padding: 12px 22px; }
 
       .stats-row { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
-      .stat:nth-child(2) { border-right: none; }
-      .stat:nth-child(3) { border-top: 1px solid var(--card-bdr); }
-      .stat:nth-child(4) { border-top: 1px solid var(--card-bdr); border-right: none; }
+
       .stat { padding: 18px 12px; }
       .stat-num { font-size: 1.6rem; }
 
@@ -217,10 +215,7 @@
       <div class="stat-num">3</div>
       <div class="stat-label">Languages Spoken<br/>English · Danish · Gujarati</div>
     </div>
-    <div class="stat">
-      <div class="stat-num">4</div>
-      <div class="stat-label">Countries Worked In<br/>Denmark · India · UK · Space 🚀</div>
-    </div>
+
   </div>
   <p class="hero-location">📍 Copenhagen Metropolitan Area, Denmark</p>
 </section>
