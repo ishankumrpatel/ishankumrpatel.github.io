@@ -70,7 +70,34 @@
     .footer-links a { color: var(--ivory-dim); text-decoration: none; font-size: 0.82rem; font-weight: 500; transition: color 0.2s; display: flex; align-items: center; gap: 5px; }
     .footer-links a:hover { color: var(--gold); }
     .footer-copy { font-size: 0.72rem; color: rgba(180,170,155,0.4); letter-spacing: 0.05em; }
-    @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr; } .cta-box { padding: 36px 24px; } }
+    @media (max-width: 768px) {
+      .hero { padding: 60px 16px 40px; }
+      .hero h1 { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+      .hero-sub { font-size: 0.95rem; margin-bottom: 36px; }
+      .stats { flex-wrap: nowrap; max-width: 100%; margin: 0 16px 50px; }
+      .stat { min-width: 0; padding: 20px 12px; }
+      .stat-num { font-size: 1.6rem; }
+      .stat-label { font-size: 0.62rem; letter-spacing: 0.08em; }
+      .section-label { padding: 0 16px; }
+      .section-label h2 { font-size: 1.3rem; }
+      .cards-grid { grid-template-columns: 1fr; padding: 0 16px; gap: 16px; margin-bottom: 50px; }
+      .card { padding: 24px 20px; border-radius: 16px; }
+      .card-quote { font-size: 0.9rem; line-height: 1.65; }
+      .cta-section { padding: 0 16px; margin-bottom: 50px; }
+      .cta-box { padding: 36px 20px; border-radius: 18px; }
+      .cta-box h3 { font-size: 1.4rem; }
+      .cta-box p { font-size: 0.88rem; margin-bottom: 24px; }
+      .cta-btn { font-size: 0.85rem; padding: 13px 22px; width: 100%; justify-content: center; }
+      footer { padding: 32px 16px; }
+      .footer-links { gap: 12px; flex-direction: column; align-items: center; }
+      .footer-tagline { font-size: 0.75rem; }
+    }
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 1.7rem; }
+      .stat-num { font-size: 1.4rem; }
+      .stat { padding: 16px 8px; }
+      .stat-label { font-size: 0.58rem; }
+    }
   </style>
 </head>
 <body>
