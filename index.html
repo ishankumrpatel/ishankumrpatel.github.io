@@ -1,440 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ishankumar Patel — Logistics &amp; Supply Chain Professional</title>
-  <meta name="description" content="Logistics and supply chain professional focused on WMS/ERP systems, process improvement and operational efficiency. Based in Copenhagen."/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0a0f0a; --bg2: #111811;
-      --gold: #c9a84c; --gold-lt: #e2c97e;
-      --sage: #7a9e7e; --ivory: #f5f0e8; --ivory-dim: #b8b0a0;
-      --card-bg: rgba(255,255,255,0.04); --card-bdr: rgba(201,168,76,0.18);
-      --glow: rgba(201,168,76,0.10);
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--ivory); font-family: 'Inter', sans-serif; min-height: 100vh; overflow-x: hidden; }
-    body::before {
-      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-      background: radial-gradient(ellipse 60% 50% at 15% 15%, rgba(122,158,126,0.07) 0%, transparent 70%),
-                  radial-gradient(ellipse 50% 40% at 85% 85%, rgba(201,168,76,0.06) 0%, transparent 70%);
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 60px;
-      background: rgba(10,15,10,0.85); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-bdr);
-    }
-    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); text-decoration: none; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { color: var(--ivory-dim); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-badge { font-size: 0.7rem; color: var(--sage); border: 1px solid rgba(122,158,126,0.35); padding: 3px 10px; border-radius: 20px; background: rgba(122,158,126,0.08); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ivory); border-radius: 2px; transition: all 0.3s; }
-    .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 99; background: rgba(10,15,10,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--card-bdr); padding: 20px 24px; flex-direction: column; gap: 0; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { color: var(--ivory-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid var(--card-bdr); letter-spacing: 0.04em; transition: color 0.2s; }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--gold); }
-
-    /* ── HERO ── */
-    #hero {
-      position: relative; z-index: 1;
-      min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 100px 24px 60px;
-    }
-    .hero-eyebrow { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--card-bdr); padding: 5px 16px; border-radius: 40px; margin-bottom: 28px; background: rgba(201,168,76,0.06); }
-    #hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 700; line-height: 1.1; color: var(--ivory); margin-bottom: 16px; letter-spacing: -0.01em; }
-    .hero-sub-title { font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--gold-lt); font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 20px; }
-    .hero-desc { font-size: 0.95rem; color: var(--ivory-dim); font-weight: 300; line-height: 1.7; max-width: 520px; margin: 0 auto 40px; }
-    .hero-desc strong { color: var(--ivory); font-weight: 500; }
-    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--bg); font-size: 0.88rem; font-weight: 600; padding: 13px 26px; border-radius: 50px; text-decoration: none; transition: all 0.2s; letter-spacing: 0.02em; }
-    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
-    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--ivory); font-size: 0.88rem; font-weight: 500; padding: 13px 26px; border-radius: 50px; text-decoration: none; border: 1px solid var(--card-bdr); transition: all 0.2s; }
-    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* ── STATS ── */
-    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 700px; width: 100%; margin: 0 auto; border: 1px solid var(--card-bdr); border-radius: 16px; background: var(--card-bg); backdrop-filter: blur(10px); overflow: hidden; }
-    .stat { padding: 24px 16px; text-align: center; border-right: 1px solid var(--card-bdr); }
-    .stat:last-child { border-right: none; }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 6px; }
-    .stat-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ivory-dim); line-height: 1.4; }
-    .hero-location { font-size: 0.78rem; color: var(--ivory-dim); margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 6px; }
-
-    /* ── SECTIONS ── */
-    section { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 80px 24px; }
-    .section-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-    section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--ivory); line-height: 1.2; margin-bottom: 32px; }
-    section h2 em { font-style: italic; color: var(--gold-lt); }
-    .divider { width: 50px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 70px; }
-
-    /* ── ABOUT ── */
-    .about-text { font-size: 0.97rem; color: var(--ivory-dim); line-height: 1.8; margin-bottom: 18px; font-weight: 300; }
-    .about-text strong { color: var(--ivory); font-weight: 500; }
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
-    .skill-tag { font-size: 0.78rem; font-weight: 500; color: var(--sage); background: rgba(122,158,126,0.1); border: 1px solid rgba(122,158,126,0.22); padding: 6px 14px; border-radius: 30px; letter-spacing: 0.03em; }
-
-    /* ── EXPERIENCE ── */
-    .timeline { display: flex; flex-direction: column; gap: 0; }
-    .timeline-item { display: grid; grid-template-columns: 200px 1fr; gap: 0 32px; padding: 32px 0; border-bottom: 1px solid var(--card-bdr); }
-    .timeline-item:last-child { border-bottom: none; }
-    .timeline-meta { text-align: right; padding-right: 32px; border-right: 1px solid var(--card-bdr); }
-    .timeline-date { font-size: 0.78rem; color: var(--gold); font-weight: 500; margin-bottom: 6px; line-height: 1.4; }
-    .timeline-duration { font-size: 0.72rem; color: var(--ivory-dim); margin-bottom: 8px; }
-    .timeline-location { font-size: 0.72rem; color: var(--sage); }
-    .timeline-content { padding-left: 0; }
-    .timeline-company { font-size: 0.82rem; color: var(--gold-lt); font-weight: 600; margin-bottom: 4px; letter-spacing: 0.04em; }
-    .timeline-role { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--ivory); margin-bottom: 12px; }
-    .timeline-desc { font-size: 0.88rem; color: var(--ivory-dim); line-height: 1.7; font-weight: 300; }
-
-    /* ── EDUCATION ── */
-    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .edu-card { background: var(--card-bg); border: 1px solid var(--card-bdr); border-radius: 16px; padding: 28px 24px; }
-    .edu-icon { font-size: 1.6rem; margin-bottom: 14px; }
-    .edu-uni { font-size: 0.8rem; color: var(--gold-lt); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
-    .edu-degree { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--ivory); margin-bottom: 8px; }
-    .edu-dates { font-size: 0.75rem; color: var(--ivory-dim); }
-
-    /* ── CERTS ── */
-    .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 50px; }
-    .cert-card { background: var(--card-bg); border: 1px solid var(--card-bdr); border-radius: 14px; padding: 22px 18px; text-align: center; }
-    .cert-icon { font-size: 1.5rem; margin-bottom: 10px; }
-    .cert-name { font-size: 0.82rem; font-weight: 500; color: var(--ivory); margin-bottom: 6px; line-height: 1.3; }
-    .cert-badge { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); }
-
-    /* ── LANGUAGES ── */
-    .lang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .lang-card { background: var(--card-bg); border: 1px solid var(--card-bdr); border-radius: 14px; padding: 22px 18px; text-align: center; }
-    .lang-flag { font-size: 1.8rem; margin-bottom: 10px; }
-    .lang-name { font-size: 0.9rem; font-weight: 600; color: var(--ivory); margin-bottom: 4px; }
-    .lang-level { font-size: 0.72rem; color: var(--ivory-dim); }
-
-    /* ── CONTACT ── */
-    #contact { text-align: center; }
-    .contact-box { background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(122,158,126,0.06)); border: 1px solid var(--card-bdr); border-radius: 24px; padding: 60px 40px; backdrop-filter: blur(10px); }
-    .contact-box p { font-size: 0.97rem; color: var(--ivory-dim); line-height: 1.7; max-width: 480px; margin: 0 auto 36px; }
-    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-    .contact-link { display: inline-flex; align-items: center; gap: 8px; background: var(--card-bg); border: 1px solid var(--card-bdr); color: var(--ivory-dim); font-size: 0.85rem; padding: 11px 20px; border-radius: 40px; text-decoration: none; transition: all 0.2s; }
-    .contact-link:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* ── FOOTER ── */
-    footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px; border-top: 1px solid var(--card-bdr); font-size: 0.75rem; color: rgba(180,170,155,0.4); letter-spacing: 0.05em; }
-
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      .nav-badge { display: none; }
-      .hamburger { display: flex; }
-
-      #hero { padding: 80px 20px 50px; min-height: 100svh; }
-      #hero h1 { font-size: clamp(2rem, 9vw, 2.8rem); }
-      .hero-desc { font-size: 0.9rem; }
-      .hero-btns { gap: 10px; }
-      .btn-primary, .btn-secondary { font-size: 0.85rem; padding: 12px 22px; }
-
-      .stats-row { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
-
-      .stat { padding: 18px 12px; }
-      .stat-num { font-size: 1.6rem; }
-
-      section { padding: 60px 20px; }
-      section h2 { font-size: clamp(1.5rem, 6vw, 2rem); margin-bottom: 24px; }
-
-      .timeline-item { grid-template-columns: 1fr; gap: 10px; }
-      .timeline-meta { text-align: left; padding-right: 0; border-right: none; border-bottom: 1px solid var(--card-bdr); padding-bottom: 12px; margin-bottom: 4px; }
-
-      .edu-grid { grid-template-columns: 1fr; }
-      .certs-grid { grid-template-columns: repeat(2, 1fr); }
-      .lang-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .contact-box { padding: 36px 20px; border-radius: 18px; }
-      .contact-links { flex-direction: column; align-items: center; }
-      .contact-link { width: 100%; justify-content: center; }
-    }
-
-    @media (max-width: 400px) {
-      #hero h1 { font-size: 1.8rem; }
-      .certs-grid { grid-template-columns: 1fr; }
-      .lang-grid { grid-template-columns: repeat(2, 1fr); }
-      .stat-num { font-size: 1.4rem; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ishankumar Patel — Logistics &amp; Systems · Rise &amp; Thrive Community</title>
+<meta name="description" content="Ishankumar Patel: logistics and supply chain professional focused on WMS/ERP and process improvement, and founder of the Rise & Thrive nutrition & wellness community. Copenhagen."/>
+<meta property="og:title" content="Ishankumar Patel — Logistics &amp; Systems · Rise &amp; Thrive"/>
+<meta property="og:description" content="Logistics and systems professional. Community builder for healthier living."/>
+<meta property="og:url" content="https://ishankumarpatel.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0f0a;--gold:#c9a84c;--gold-lt:#e2c97e;--sage:#7a9e7e;--ivory:#f5f0e8;--dim:#b8b0a0;--card:rgba(255,255,255,.04);--bdr:rgba(201,168,76,.18)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ivory);font:400 16px/1.7 'Inter',sans-serif;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 15% 10%,rgba(122,158,126,.08),transparent 70%),radial-gradient(ellipse 50% 40% at 85% 90%,rgba(201,168,76,.06),transparent 70%)}
+a{color:var(--gold-lt)}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{position:relative;max-width:980px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(10,15,10,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--bdr)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;flex-wrap:wrap;gap:10px}
+.logo{font:700 1.3rem 'Playfair Display',serif;color:var(--ivory);text-decoration:none}.logo span{color:var(--gold)}
+nav .links a{color:var(--dim);text-decoration:none;font-size:.88rem;margin-left:20px}nav .links a:hover{color:var(--gold)}
+.hero{padding:110px 0 70px}
+.eyebrow{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid var(--bdr);padding:5px 16px;border-radius:40px;background:rgba(201,168,76,.06)}
+h1{font:700 clamp(2.6rem,8vw,5rem)/1.08 'Playfair Display',serif;margin:24px 0 18px}h1 em{color:var(--gold-lt)}
+.hero p{max-width:600px;color:var(--dim);font-weight:300;font-size:1.1rem}
+.btns{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--gold);color:var(--bg);font-weight:600;font-size:.9rem;padding:13px 28px;border-radius:50px;text-decoration:none}
+.btn:hover{background:var(--gold-lt)}.btn.alt{background:transparent;color:var(--ivory);border:1px solid var(--bdr)}.btn.alt:hover{border-color:var(--gold);color:var(--gold)}
+section{padding:64px 0;border-top:1px solid var(--bdr)}
+.label{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+h2{font:700 clamp(1.7rem,4vw,2.4rem)/1.2 'Playfair Display',serif;margin-bottom:28px}
+.two{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:28px 26px}
+.card h3{font:600 1.3rem 'Playfair Display',serif;margin-bottom:10px}.card p{color:var(--dim);font-weight:300;font-size:.95rem;margin-bottom:14px}
+.card a.go{font-weight:500;font-size:.9rem;text-decoration:none}
+.about p{max-width:680px;color:var(--dim);font-weight:300;margin-bottom:16px}.about strong{color:var(--ivory);font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tags span{font-size:.8rem;color:var(--sage);background:rgba(122,158,126,.1);border:1px solid rgba(122,158,126,.22);padding:5px 14px;border-radius:30px}
+.job{display:grid;grid-template-columns:190px 1fr;gap:6px 28px;padding:20px 0;border-bottom:1px solid var(--bdr)}
+.job .when{font-size:.82rem;color:var(--gold)}.job h3{font:600 1.1rem 'Playfair Display',serif}.job .org{color:var(--sage);font-size:.88rem;margin-bottom:6px}.job p{color:var(--dim);font-weight:300;font-size:.93rem}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini div{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:16px 18px;font-size:.9rem}
+.mini small{display:block;color:var(--dim);font-size:.78rem}
+.contact{text-align:center}.contact p{color:var(--dim);max-width:520px;margin:0 auto 26px;font-weight:300}
+footer{border-top:1px solid var(--bdr);padding:28px 24px;text-align:center;font-size:.78rem;color:rgba(184,176,160,.6);position:relative}
+@media(max-width:720px){.two,.mini{grid-template-columns:1fr}.job{grid-template-columns:1fr}.hero{padding-top:70px}nav .links a{margin:0 14px 0 0}}
+</style>
 </head>
 <body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">IP<span>.</span></a>
+  <div class="links"><a href="#work">What I do</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+</div></nav>
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">IP.</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <span class="nav-badge">Available for opportunities</span>
-  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#experience" onclick="closeMenu()">Experience</a>
-  <a href="#education" onclick="closeMenu()">Education</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+<main id="top">
+<div class="wrap hero">
+  <span class="eyebrow">Copenhagen · Logistics &amp; Community</span>
+  <h1>Making operations run smoother. <em>Helping people thrive.</em></h1>
+  <p>I'm a logistics and supply chain professional who connects people, processes and systems, and the founder of Rise &amp; Thrive, a community for nutrition and wellness.</p>
+  <div class="btns"><a class="btn" href="#work">What I do</a><a class="btn alt" href="#contact">Get in touch</a></div>
 </div>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-eyebrow">Logistics &amp; Supply Chain Professional</div>
-  <h1>ISHANKUMAR<br/>PATEL</h1>
-  <p class="hero-sub-title">WMS / ERP Systems · Process Improvement · Operational Efficiency</p>
-  <p class="hero-desc"><strong>5+ years</strong> connecting people, processes and systems to keep complex logistics flows running smoothly. Based in Copenhagen.</p>
-  <div class="hero-btns">
-    <a href="#experience" class="btn-primary">Explore Work</a>
-    <a href="#contact" class="btn-secondary">Get in Touch</a>
+<section id="work"><div class="wrap">
+  <div class="label">What I do</div><h2>Two areas, one approach</h2>
+  <div class="two">
+    <div class="card"><h3>Logistics &amp; Systems</h3><p>5+ years coordinating inbound and outbound flows, inventory accuracy and co-packing, with a growing focus on WMS/ERP and process improvement.</p><a class="go" href="#experience">See my experience →</a></div>
+    <div class="card"><h3>Rise &amp; Thrive Community</h3><p>A nutrition and wellness community with 500+ lives impacted, built on practical guidance and member support.</p><a class="go" href="https://riseandthrive.github.io" target="_blank" rel="noopener">Read member stories →</a></div>
   </div>
-  <div class="stats-row">
-    <div class="stat">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Years of Experience<br/>Logistics &amp; Supply Chain</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">5</div>
-      <div class="stat-label">Certifications<br/>AI, Agile &amp; SAFe</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">4</div>
-      <div class="stat-label">Languages Spoken<br/>English · Danish · Gujarati · Hindi</div>
-    </div>
+</div></section>
 
+<section id="about" class="about"><div class="wrap">
+  <div class="label">About</div><h2>Operational. <em style="color:var(--gold-lt)">Systems-minded.</em> Improvement-driven.</h2>
+  <p>I help logistics operations run smoother by connecting <strong>people, processes and the systems</strong> that hold them together. My work has moved from day-to-day execution into the systems that make operations possible, including WMS and ERP.</p>
+  <p>I turn operational friction into <strong>structured, lasting fixes</strong> rather than one-off patches, and I'm interested in how a system's performance shows up on the warehouse floor. The same care for people drives my work in the Rise &amp; Thrive community.</p>
+  <div class="tags"><span>WMS / ERP</span><span>Process Improvement</span><span>Incident Resolution</span><span>Inventory Accuracy</span><span>3PL &amp; Carrier Coordination</span><span>Workshop Facilitation</span><span>Requirements Analysis</span><span>Agile / SAFe</span></div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="label">Experience</div><h2>Where I've worked</h2>
+  <div class="job"><div class="when">Sep 2021 – Present</div><div><h3>Logistic Professional</h3><div class="org">Brdr. A&amp;O Johansen A/S · Denmark</div><p>Coordinate inbound and outbound logistics with carriers, warehouses, co-packers and 3PLs. Monitor inventory accuracy and stock reconciliations, and plan co-packing to specification and quality requirements.</p></div></div>
+  <div class="job"><div class="when">Sep 2020 – Aug 2021</div><div><h3>Product Owner</h3><div class="org">Vyanjan Pvt Ltd. · India</div><p>Turned business needs into epics, user stories and acceptance criteria, and prioritised the backlog by business value.</p></div></div>
+  <div class="job"><div class="when">2010 – 2020</div><div><h3>Earlier career</h3><div class="org">Consulting, analysis and engineering roles</div><p>IT consulting and business &amp; solution analysis, plus early engineering work at ISRO. Full history on LinkedIn.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Credentials</div><h2>Certifications &amp; languages</h2>
+  <div class="mini">
+    <div>SAFe Agilist<small>Certification</small></div><div>Agile Product Owner<small>Certification</small></div><div>Generative AI<small>Certification</small></div>
+    <div>AI Generalist<small>Certification</small></div><div>English · Danish<small>Full / professional working</small></div><div>Gujarati · Hindi<small>Native / elementary</small></div>
   </div>
-  <p class="hero-location">📍 Copenhagen Metropolitan Area, Denmark</p>
-</section>
+</div></section>
 
-<div class="divider"></div>
-
-<!-- ABOUT -->
-<section id="about">
-  <p class="section-eyebrow">About Me</p>
-  <h2>Operational. &nbsp;<em>Systems-minded.</em>&nbsp; Improvement-driven.</h2>
-  <p class="about-text">I help logistics operations run smoother by connecting <strong>people, processes, and the systems</strong> that hold them together. With <strong>5+ years in supply chain and logistics coordination</strong>, my work has moved beyond day-to-day execution into the systems that make operations possible, including WMS and ERP.</p>
-  <p class="about-text">I work on <strong>process improvement and incident resolution</strong>, turning operational friction into structured, lasting fixes rather than one-off patches. I'm interested in how a system's performance translates into what happens on the warehouse floor, and in using that insight to improve both.</p>
-  <p class="about-text">I'm looking for roles that combine <strong>hands-on operational understanding with responsibility for systems strategy</strong>, bridging "how things work today" and "how they should work tomorrow".</p>
-  <div class="skills-grid">
-    <span class="skill-tag">Workshop Facilitation</span>
-    <span class="skill-tag">Business Process Management</span>
-    <span class="skill-tag">Requirements Analysis</span>
-    <span class="skill-tag">WMS / ERP Systems</span>
-    <span class="skill-tag">Inbound &amp; Outbound Logistics</span>
-    <span class="skill-tag">Inventory Accuracy</span>
-    <span class="skill-tag">Stock Reconciliation</span>
-    <span class="skill-tag">Co-packing Coordination</span>
-    <span class="skill-tag">3PL &amp; Carrier Coordination</span>
-    <span class="skill-tag">Incident Resolution</span>
-    <span class="skill-tag">Process Improvement</span>
-    <span class="skill-tag">Agile / SAFe</span>
+<section id="contact" class="contact"><div class="wrap">
+  <div class="label">Contact</div><h2>Let's talk</h2>
+  <p>Open to conversations about logistics systems, WMS/ERP integration and operational excellence, or about joining the Rise &amp; Thrive community.</p>
+  <div class="btns" style="justify-content:center">
+    <a class="btn" href="mailto:ishankumr.patel@gmail.com">Email me</a>
+    <a class="btn alt" href="https://www.linkedin.com/in/ishankumrpatel" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn alt" href="https://chat.whatsapp.com/HhRdJadq1o3EzpzWaxfl1C" target="_blank" rel="noopener">Join Rise &amp; Thrive</a>
   </div>
-</section>
+</div></section>
+</main>
 
-<div class="divider"></div>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <p class="section-eyebrow">Career Journey</p>
-  <h2>Experience</h2>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Sep 2021 — Present<br/>(5 yrs 1 mo)</div>
-        <div class="timeline-location">📍 Denmark</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">Brdr. A&amp;O Johansen A/S</div>
-        <div class="timeline-role">Logistic Professional</div>
-        <div class="timeline-desc">Coordinate inbound and outbound logistics with carriers, warehouses, co-packers and other third-party logistics providers. Monitor warehouse operations, inventory accuracy and stock reconciliations, ensuring discrepancies are identified and resolved. Plan and coordinate co-packing activities for timely execution in line with agreed specifications and quality requirements.</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Sep 2020 — Aug 2021<br/>(1 year)</div>
-        <div class="timeline-location">📍 India</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">Vyanjan Pvt Ltd.</div>
-        <div class="timeline-role">Product Owner</div>
-        <div class="timeline-desc">Drove clarifications with stakeholders and documented business requirements as epics, user stories and acceptance criteria. Acted as a bridge between business stakeholders and development teams. Prioritised the product backlog by business value and delivery timelines, and facilitated sprint planning and other Agile ceremonies.</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Feb 2015 — Aug 2020<br/>(5 yrs 7 mo)</div>
-        <div class="timeline-location">📍 Copenhagen, Denmark</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">Freelance</div>
-        <div class="timeline-role">IT Consultant</div>
-        <div class="timeline-desc">Analyzed business requirements and translated them into functional solutions. Supported implementation of systems aligned with business processes. Delivered structured documentation and supported execution of client solutions.</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Jan 2014 — Dec 2014<br/>(1 year)</div>
-        <div class="timeline-location">📍 Vadodara, India</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">Thaker Engineering Co. Pvt. Ltd.</div>
-        <div class="timeline-role">IT Engineer — Business &amp; Solution Analysis</div>
-        <div class="timeline-desc">Led stakeholder discussions to understand business needs and processes. Supported design and implementation of business-aligned solutions. Contributed to improving system reliability through structured analysis.</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Jun 2013 — Dec 2013<br/>(7 months)</div>
-        <div class="timeline-location">📍 Greater London</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">Subway UK &amp; Ireland</div>
-        <div class="timeline-role">Manager</div>
-        <div class="timeline-desc">Managed day-to-day store operations, team coordination, and customer experience in a fast-paced retail environment. Developed leadership and operational efficiency skills.</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Jun 2012 — May 2013<br/>(1 year)</div>
-        <div class="timeline-location">📍 Greater London</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">Burger King UK</div>
-        <div class="timeline-role">Team Leader</div>
-        <div class="timeline-desc">Led a team delivering high-quality service in a high-volume environment. Focused on operational efficiency, team performance, and customer satisfaction.</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Nov 2010 — Oct 2011<br/>(1 year)</div>
-        <div class="timeline-location">📍 Ahmedabad, India</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">ISRO — Indian Space Research Organization</div>
-        <div class="timeline-role">Scientist — Software Engineer</div>
-        <div class="timeline-desc">Worked in a high-performance environment delivering mission-critical solutions. Collaborated with cross-functional teams on development and implementation. Applied structured analytical thinking to solve complex challenges at one of India's most prestigious institutions.</div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-meta">
-        <div class="timeline-date">Jan 2010 — Oct 2010<br/>(10 months)</div>
-        <div class="timeline-location">📍 India</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-company">StudentSoft Classes</div>
-        <div class="timeline-role">Software Developer</div>
-        <div class="timeline-desc">Developed software solutions and educational tools, contributing to projects from design through deployment.</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- EDUCATION -->
-<section id="education">
-  <p class="section-eyebrow">Academic Background</p>
-  <h2>Education</h2>
-  <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-uni">University of Bedfordshire · UK</div>
-      <div class="edu-degree">MSc Computer Networking</div>
-      <div class="edu-dates">March 2012 — July 2013</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon">🏛️</div>
-      <div class="edu-uni">Gujarat University · India</div>
-      <div class="edu-degree">BE Information Technology</div>
-      <div class="edu-dates">June 2006 — May 2010</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CERTS -->
-<section id="certs">
-  <p class="section-eyebrow">Learning &amp; Development</p>
-  <h2>Certifications</h2>
-  <div class="certs-grid">
-    <div class="cert-card"><div class="cert-icon">🤖</div><div class="cert-name">Generative AI</div><div class="cert-badge">Certified</div></div>
-    <div class="cert-card"><div class="cert-icon">🧠</div><div class="cert-name">AI Generalist</div><div class="cert-badge">Certified</div></div>
-    <div class="cert-card"><div class="cert-icon">⚡</div><div class="cert-name">Agile Product Owner</div><div class="cert-badge">Certified</div></div>
-    <div class="cert-card"><div class="cert-icon">🧩</div><div class="cert-name">Agile Product Owner Role</div><div class="cert-badge">Certified</div></div>
-    <div class="cert-card"><div class="cert-icon">🏅</div><div class="cert-name">SAFe Agilist</div><div class="cert-badge">Certified</div></div>
-  </div>
-
-  <p class="section-eyebrow" style="margin-top:50px;">Communication</p>
-  <h2>Languages</h2>
-  <div class="lang-grid">
-    <div class="lang-card"><div class="lang-flag">🇬🇧</div><div class="lang-name">English</div><div class="lang-level">Full Professional</div></div>
-    <div class="lang-card"><div class="lang-flag">🇩🇰</div><div class="lang-name">Danish</div><div class="lang-level">Professional Working</div></div>
-    <div class="lang-card"><div class="lang-flag">🇮🇳</div><div class="lang-name">Gujarati</div><div class="lang-level">Native / Bilingual</div></div>
-    <div class="lang-card"><div class="lang-flag">🇮🇳</div><div class="lang-name">Hindi</div><div class="lang-level">Elementary</div></div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <p class="section-eyebrow">Let's Connect</p>
-  <h2>Open to new <em>opportunities</em></h2>
-  <div class="contact-box">
-    <p>Whether you have a role in mind or want to discuss logistics systems, WMS/ERP integration, or operational excellence — I'd love to hear from you.</p>
-    <div class="contact-links">
-      <a href="mailto:ishankumr.patel@gmail.com" class="contact-link">✉️ ishankumr.patel@gmail.com</a>
-      <a href="tel:+4591622044" class="contact-link">📞 +45 91 62 20 44</a>
-      <a href="https://www.linkedin.com/in/ishankumrpatel" target="_blank" class="contact-link">💼 LinkedIn Profile</a>
-      <a href="https://ishankumrpatel.github.io/" target="_blank" class="contact-link">🌐 Portfolio Site</a>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 Ishankumar Patel · Copenhagen · Built for GitHub Pages</footer>
-
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('mobileMenu').classList.remove('open');
-  }
-  // Close menu when clicking outside
-  document.addEventListener('click', function(e) {
-    const menu = document.getElementById('mobileMenu');
-    const hamburger = document.getElementById('hamburger');
-    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-      menu.classList.remove('open');
-    }
-  });
-</script>
-
+<footer>© 2026 Ishankumar Patel · Copenhagen, Denmark</footer>
 </body>
 </html>
